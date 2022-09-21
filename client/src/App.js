@@ -7,6 +7,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableBody from '@material-ui/core/TableBody';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
+//import { CircularProgress } from '@material-ui/core/CircularProgress';
+import CircularProgress from '@mui/material/CircularProgress';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
@@ -17,15 +19,20 @@ const styles = theme => ({
   },
   table: {
     minWidth: 1080
+  },
+  progress: {
+    margin: theme.spacing.unit * 2
   }
 });
 
 class App extends Component {
   state = {
-    customers: ""
+    customers: "",
+    completed: 0
   }
 
   componentDidMount() {
+    this.timer = setInterval(this.progress, 20); // 0.02초마다
     this.callApi()
       .then(res => this.setState({ customers: res }))
       .catch(err => console.log(err));
@@ -35,6 +42,11 @@ class App extends Component {
     const response = await fetch('/api/customers');
     const body = await response.json();
     return body;
+  }
+
+  progress = () => {
+    const { completed } = this.state;
+    this.setState({ completed: completed >= 100 ? 0 : completed + 1 });
   }
 
   render() {
@@ -56,7 +68,13 @@ class App extends Component {
             {this.state.customers ? this.state.customers.map(c => {
               return (<Customer key={c.id} id={c.id} image={c.image} name={c.name} birthday={c.birthday} gender={c.gender} job={c.job} />
               );
-            }) : ""}
+            }) : 
+            <TableRow>
+              <TableCell colSpan="6" align="center">
+                <CircularProgress className={classes.progress} variant="indeterminate" value={this.state.completed} />
+              </TableCell>
+            </TableRow>
+            }
           </TableBody>
         </Table>
       </Paper>
@@ -65,3 +83,17 @@ class App extends Component {
 }
 
 export default withStyles(styles)(App);
+
+
+/*
+컴포넌트 라이프 사이클
+1. constructor()
+2. componentWillMount()
+3. render()
+4. componentDidMount()
+
+컴포넌트의 props or state 변경 시 -> shouldComponentUpdate()
+
+리액트는 상태변화를 알아서 감지, 화면을 재구성 해줌.
+우리는 상태관리만 잘해주면 됨.
+*/
