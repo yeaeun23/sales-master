@@ -23,7 +23,7 @@ connection.connect();
 
 app.get('/api/customers', (req, res) => {
   connection.query(
-    "SELECT * FROM CUSTOMER",
+    "SELECT * FROM CUSTOMER WHERE isDeleted = 0",
     (err, rows, fields) => {
       res.send(rows);
     }
@@ -31,7 +31,7 @@ app.get('/api/customers', (req, res) => {
 });
 
 app.post('/api/customers', (req, res) => {
-  let sql = 'INSERT INTO CUSTOMER VALUES (null, ?, ?, ?, ?, ?)';
+  let sql = 'INSERT INTO CUSTOMER VALUES (null, ?, ?, ?, ?, ?, now(), 0)';
   let name = req.body.name;
   let birthday = req.body.birthday;
   let gender = req.body.gender;
@@ -47,6 +47,16 @@ app.post('/api/customers', (req, res) => {
       console.log(err);
       console.log(err);
     })
+});
+
+app.delete('/api/customers/:id', (req, res) => {
+  let sql = 'UPDATE CUSTOMER SET isDeleted = 1 WHERE id = ?';
+  let params = [req.params.id];
+  connection.query(sql, params,
+    (err, rows, fields) => {
+      res.send(rows);
+    }
+    )
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
