@@ -30,9 +30,10 @@ class CustomerAdd extends React.Component {
 
     handleFormSubmit = (e) => {
         e.preventDefault()
+        console.log('핸들폼서밋: '+e);
         this.addCustomer()
             .then((response) => {
-                console.log(response.data);
+                console.log('핸들폼서밋: '+response.data);
                 this.props.stateRefresh(); // 고객 목록만 새로고침
             })
         this.setState({  // 변수 초기화
