@@ -3,7 +3,7 @@
 - 개발 100%
 
 - 온라인 강의 참고 : React와 Node.js를 활용한 '고객 관리 시스템'\
-  https://youtube.com/playlist?list=PLRx0vPvlEmdCED62ZIWCbI-6G_jcwmuFB
+  (https://youtube.com/playlist?list=PLRx0vPvlEmdCED62ZIWCbI-6G_jcwmuFB)
   
 - 응용 프로젝트 : [영업 관리 시스템](https://github.com/yeaeun23/sales-management)
 
