@@ -2,10 +2,10 @@
 
 - 개발 100%
 
-- 온라인 강의 참고: React와 Node.js를 활용한 '고객 관리 시스템'\
+- 온라인 강의 참고 : React와 Node.js를 활용한 '고객 관리 시스템'\
   https://youtube.com/playlist?list=PLRx0vPvlEmdCED62ZIWCbI-6G_jcwmuFB
   
-- 응용 프로젝트: [영업 관리 시스템](https://github.com/yeaeun23/sales-management)
+- 응용 프로젝트 : [영업 관리 시스템](https://github.com/yeaeun23/sales-management)
 
 <br>
 
@@ -19,7 +19,7 @@
 
 ### 2. 고객 추가
 - '고객 추가하기' 버튼을 누르면 정보를 입력하는 모달창이 뜹니다.\
-  (사진: 프로필 이미지 / 텍스트: 이름, 생년월일, 성별, 직업)
+  (사진 : 프로필 이미지 / 텍스트 : 이름, 생년월일, 성별, 직업)
 
 ![2](https://user-images.githubusercontent.com/14077108/221400349-937b4445-cbb1-47f4-8cae-b670f824ad40.png)
 
