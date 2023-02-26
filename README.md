@@ -17,11 +17,12 @@
 ### 2. 고객 추가
 - '고객 추가하기' 버튼을 누르면 정보를 입력하는 모달창이 뜹니다.\
   (사진: 프로필 이미지 / 텍스트: 이름, 생년월일, 성별, 직업)
-- 추가를 완료하면 모달창이 닫히면서 목록이 새로고침 됩니다.
 
 ![2](https://user-images.githubusercontent.com/14077108/221400349-937b4445-cbb1-47f4-8cae-b670f824ad40.png)
 
 ![3](https://user-images.githubusercontent.com/14077108/221400351-f9128995-37db-482b-b8f6-9de72d3c292a.png)
+
+- 추가를 완료하면 모달창이 닫히면서 목록이 새로고침 됩니다.
 
 ![4](https://user-images.githubusercontent.com/14077108/221400352-94f9ca56-71e4-4151-b92b-a30c80674315.png)
 <br>
